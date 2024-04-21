@@ -73,6 +73,7 @@ function Personel(id, name, age, salary) {
   this.name = name;
   this.age = age;
   this.salary = salary;
+  console.log(this);
 }
 
 const person1 = new Personel("1234567890", "Ahmet Can", 33, 30000);
@@ -80,3 +81,59 @@ const person2 = new Personel("123456745454", "Mehmet Veli", 23, 10000);
 
 console.log(person1);
 
+const personel = {
+  name: "Ahmet",
+  surname: "Canan",
+  dob: 1990,
+  salary: 30000,
+  drivingLicense: true,
+  calculateAge: function () {
+    console.log(this);
+    return new Date().getFullYear() - this.dob;
+  },
+  summary: () => {
+    console.log(this);
+    // return `${this.name} is ${this.calculateAge()} years old`;
+  },
+};
+
+console.log(personel.name + " " + personel.surname);
+
+console.log("AGE:", personel.calculateAge());
+
+console.log(personel.summary());
+
+const team = [
+  {
+    name: "Ahmet",
+    surname: "can",
+    job: "Developer",
+    age: 30,
+  },
+  { name: "Mary", surname: "Bary", job: "tester", age: 22 },
+  { name: "Hazel", surname: "Nut", job: "developer", age: 20 },
+];
+
+console.log(team);
+console.log(team[1]);
+console.log(team[1].name);
+console.log(team[2].age);
+
+team.forEach((p) => console.log(p.job));
+
+const personelAges = team.map((person) => person.age + 1);
+console.log(personelAges);
+
+const teamFullName = team.map((p) => {
+  return {
+    fullName: p.name.toUpperCase() + " " + p.surname.toUpperCase(),
+    age: p.age + 5,
+  };
+});
+
+const teamFullName1 = team.map((p) => ({
+  fullName: p.name.toUpperCase() + " " + p.surname.toUpperCase(),
+  age: p.age + 5,
+}));
+
+console.log(teamFullName1);
