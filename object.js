@@ -68,5 +68,15 @@ console.log(myCar["model"]);
 
 console.log(myCar);
 
+function Personel(id, name, age, salary) {
+  this.id = id;
+  this.name = name;
+  this.age = age;
+  this.salary = salary;
+}
 
-function
+const person1 = new Personel("1234567890", "Ahmet Can", 33, 30000);
+const person2 = new Personel("123456745454", "Mehmet Veli", 23, 10000);
+
+console.log(person1);
+
